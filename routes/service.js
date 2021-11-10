@@ -59,18 +59,11 @@ router.get("/find/:id", async (req, res) => {
 //GET ALL PRODUCTS
 router.get("/", async (req, res) => {
   const qNew = req.query.new;
-  const qCategory = req.query.category;
   try {
     let services;
 
     if (qNew) {
       services = await Service.find().sort({ createdAt: -1 }).limit(1);
-    } else if (qCategory) {
-      services = await Service.find({
-        categories: {
-          $in: [qCategory],
-        },
-      });
     } else {
       services = await Service.find();
     }
