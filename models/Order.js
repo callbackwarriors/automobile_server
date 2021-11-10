@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const OrderSchema = new mongoose.Schema(
   {
     userId: { type: String, required: true },
-    products: [
+    services: [
       {
-        productId: {
+        serviceId: {
           type: String,
         },
         quantity: {

@@ -46,7 +46,7 @@ router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-//GET PRODUCT
+//GET SERVICE
 router.get("/find/:id", async (req, res) => {
   try {
     const service = await Service.findById(req.params.id);
@@ -56,7 +56,7 @@ router.get("/find/:id", async (req, res) => {
   }
 });
 
-//GET ALL PRODUCTS
+//GET ALL SERVICES
 router.get("/", async (req, res) => {
   const qNew = req.query.new;
   try {
