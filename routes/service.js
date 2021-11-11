@@ -8,7 +8,6 @@ const {
 const router = require("express").Router();
 
 //CREATE
-
 router.post("/", verifyTokenAndAdmin, async (req, res) => {
   const newService = new Service(req.body);
 
